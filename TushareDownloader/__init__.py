@@ -1,11 +1,9 @@
 """
-Module Name Here
-
+TushareDownloader package
 Author: Yanzhong Huang
 Email: yanzhong.huang@outlook.com
 """
 
-
-if __name__ == '__main__':
-    pass
-    
+from .download import *
+from .query import *
+from .initialize_db import *
