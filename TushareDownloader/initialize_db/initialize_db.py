@@ -17,6 +17,7 @@ from TushareDownloader.database import get_db_engine
 from TushareDownloader.database import get_db_config as _get_db_config
 from TushareDownloader.database import update_db_config as _update_db_config
 
+
 SQL_FILE_DIRECTORY = 'TushareDownloader/initialize_db/table_structures'
 
 
