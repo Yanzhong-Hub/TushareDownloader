@@ -12,7 +12,4 @@ pip install TushareDownloader
 #TODO
 ```
 
-## Documentation
-
-[Structure](<TushareDownloader/doc/Structure of TushareDownloader.md>)
-[initialize_db module](<TushareDownloader/doc/initialize_db module.md>)
+Full Documentation: https://bagelquant.com/tusharedownloader

@@ -48,5 +48,12 @@ class TestInitializeDB(unittest.TestCase):
         create_all_tables()
         pass
 
+    def test_change_db_config_to_default(self) -> None:
+        update_user_name('root')
+        update_password('Hyz.js180518')
+        update_host('localhost')
+        update_port(3306)
+        pass
+
 if __name__ == '__main__':
     unittest.main()
