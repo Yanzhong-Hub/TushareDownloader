@@ -27,6 +27,9 @@ def stock_list(pro: DataApi,
     :param ts_code: ts_code
     :param name: name
     :param exchange: exchange, option: SSE上交所 SZSE深交所 HKEX港交所
+    :param market: market
+    :param is_hs: is_hs, option:
+    :param list_status: list_status
 
     """
     return pro.stock_basic(**{
@@ -53,7 +56,7 @@ def stock_list(pro: DataApi,
         "curr_type",
         "list_status",
         "delist_date",
-        "is_hs",
+        "is_hs"
         "act_name",
         "act_ent_type"
     ])  # type: ignore
@@ -80,4 +83,3 @@ def trading_calendar(pro: DataApi,
         "is_open",
         "pretrade_date"
     ])  # type: ignore
-

@@ -36,13 +36,11 @@ def update_db_config(config: dict[str, str|int]) -> None:
 
 def get_db_engine() -> Engine:
     """
-    get database engine
     :return: database engine
     """
     config = get_db_config()
     engine = create_engine(
         f"mysql+pymysql://{config['user']}:{config['password']}@{config['host']}:{config['port']}/{config['database']}",
-        encoding='utf-8',
         echo=False
     )
     return engine
