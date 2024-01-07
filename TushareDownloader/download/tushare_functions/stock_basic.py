@@ -56,7 +56,7 @@ def stock_list(pro: DataApi,
         "curr_type",
         "list_status",
         "delist_date",
-        "is_hs"
+        "is_hs",
         "act_name",
         "act_ent_type"
     ])  # type: ignore
