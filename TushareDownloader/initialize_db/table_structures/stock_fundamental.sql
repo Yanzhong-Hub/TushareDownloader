@@ -4,7 +4,9 @@
 -- cash_flow
 
 -- Create income_statement table
+DROP TABLE IF EXISTS income_statement;
 CREATE TABLE IF NOT EXISTS income_statement(
+    id INT PRIMARY KEY auto_increment,
     ts_code VARCHAR(10) NOT NULL, 
     ann_date DATE NOT NULL,
     f_ann_date DATE NOT NULL,
@@ -100,13 +102,14 @@ CREATE TABLE IF NOT EXISTS income_statement(
     amodcost_fin_assets FLOAT,   
     update_flag BOOLEAN NOT NULL,
     update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    delete_flag BOOLEAN NOT NULL DEFAULT FALSE,
-    PRIMARY KEY(ts_code, f_ann_date, update_flag)
+    delete_flag BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 
 -- Create balance_sheet
+DROP TABLE IF EXISTS balance_sheet;
 CREATE TABLE IF NOT EXISTS balance_sheet(
+    id INT PRIMARY KEY auto_increment,
     ts_code VARCHAR(10) NOT NULL,
     ann_date DATE NOT NULL,
     f_ann_date DATE NOT NULL,
@@ -266,13 +269,14 @@ CREATE TABLE IF NOT EXISTS balance_sheet(
     lease_liab FLOAT,
     update_flag BOOLEAN NOT NULL,
     update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    delete_flag BOOLEAN NOT NULL DEFAULT FALSE,
-    PRIMARY KEY(ts_code, f_ann_date, update_flag)
+    delete_flag BOOLEAN NOT NULL DEFAULT FALSE
 );
 
 
 -- Create cash_flow
+DROP TABLE IF EXISTS cash_flow;
 CREATE TABLE IF NOT EXISTS cash_flow(
+    id INT PRIMARY KEY auto_increment,
     ts_code VARCHAR(10) NOT NULL,
     ann_date DATE NOT NULL,
     f_ann_date DATE NOT NULL,
@@ -371,6 +375,5 @@ CREATE TABLE IF NOT EXISTS cash_flow(
     beg_bal_cash_equ FLOAT,
     update_flag BOOLEAN NOT NULL,
     update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    delete_flag BOOLEAN NOT NULL DEFAULT FALSE,
-    PRIMARY KEY(ts_code, f_ann_date, update_flag)
+    delete_flag BOOLEAN NOT NULL DEFAULT FALSE
 );
