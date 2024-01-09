@@ -27,23 +27,26 @@ def stock_daily(pro: DataApi,
     :param start_date: start_date
     :param end_date: end_date
     """
-    return pro.daily(ts_code=ts_code,
-                     trade_date=trade_date,
-                     start_date=start_date,
-                     end_date=end_date,
-                     fields=[
-                         "ts_code",
-                         "trade_date",
-                         "open",
-                         "high",
-                         "low",
-                         "close",
-                         "pre_close",
-                         "change",
-                         "pct_chg",
-                         "vol",
-                         "amount"
-                     ])  # type: ignore
+    return pro.daily(**{
+        "ts_code": ts_code,
+        "trade_date": trade_date,
+        "start_date": start_date,
+        "end_date": end_date,
+        "offset": "",
+        "limit": ""
+    }, fields=[
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+    ])
 
 
 def stock_weekly(pro: DataApi,
@@ -61,23 +64,26 @@ def stock_weekly(pro: DataApi,
     :param start_date: start_date
     :param end_date: end_date
     """
-    return pro.weekly(ts_code=ts_code,
-                      trade_date=trade_date,
-                      start_date=start_date,
-                      end_date=end_date,
-                      fields=[
-                          "ts_code",
-                          "trade_date",
-                          "open",
-                          "high",
-                          "low",
-                          "close",
-                          "pre_close",
-                          "change",
-                          "pct_chg",
-                          "vol",
-                          "amount"
-                      ])  # type: ignore
+    return pro.weekly(**{
+        "ts_code": ts_code,
+        "trade_date": trade_date,
+        "start_date": start_date,
+        "end_date": end_date,
+        "offset": "",
+        "limit": ""
+    }, fields=[
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+    ])
 
 
 def stock_monthly(pro: DataApi,
@@ -93,20 +99,29 @@ def stock_monthly(pro: DataApi,
     :param start_date: start_date
     :param end_date: end_date
     """
-    return pro.monthly(ts_code=ts_code,
-                       trade_date=trade_date,
-                       start_date=start_date,
-                       end_date=end_date,
-                       fields=[
-                           "ts_code",
-                           "trade_date",
-                           "open",
-                           "high",
-                           "low",
-                           "close",
-                           "pre_close",
-                           "change",
-                           "pct_chg",
-                           "vol",
-                           "amount"
-                       ])  # type: ignore
+    return pro.monthly(**{
+        "ts_code": ts_code,
+        "trade_date": trade_date,
+        "start_date": start_date,
+        "end_date": end_date,
+        "offset": "",
+        "limit": ""
+    }, fields=[
+        "ts_code",
+        "trade_date",
+        "open",
+        "high",
+        "low",
+        "close",
+        "pre_close",
+        "change",
+        "pct_chg",
+        "vol",
+        "amount"
+    ])
+
+
+if __name__ == '__main__':
+    from TushareDownloader.download.tushare_functions.tushare_basic import get_tushare_pro
+    pro = get_tushare_pro()
+    print(stock_daily(pro, trade_date='20240102'))

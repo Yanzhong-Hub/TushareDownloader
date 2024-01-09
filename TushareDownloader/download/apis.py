@@ -6,7 +6,8 @@ Download module apis
 The Download methods are designed to:
 1. Download the corresponding table data.
 2. Replace all existing data in the table.
-   For Example: `download_stock_list` method will delete all data in the `stock_list` table and save the newly downloaded data.
+   For Example: `download_stock_list` method will delete all data in the `stock_list` table
+   and save the newly downloaded data.
 
 Methods:
 - download_stock_list
@@ -32,17 +33,12 @@ Stocks:
 
 import pandas as pd
 
-from .operation import download_operation
-
+from .operations import download_operation, update_operation
 from .tushare_functions import get_tushare_pro
 from .tushare_functions import (stock_list,
-                                trading_calendar,
-                                stock_daily,
-                                stock_weekly,
-                                stock_monthly,
-                                income_statement,
-                                balance_sheet,
-                                cash_flow)
+                                trading_calendar)
+from .tushare_functions import stock_daily, stock_weekly, stock_monthly
+from .tushare_functions import income_statement, balance_sheet, cash_flow
 
 pro = get_tushare_pro()
 
@@ -68,17 +64,17 @@ def download_trading_calendar() -> None:
 
 def update_stock_daily() -> None:
     """update stock daily to today"""
-    pass
+    update_operation(table_name='stock_daily', tushare_function=stock_daily)
 
 
 def update_stock_weekly() -> None:
     """update stock weekly to today"""
-    pass
+    update_operation(table_name='stock_weekly', tushare_function=stock_weekly)
 
 
 def update_stock_monthly() -> None:
     """update stock monthly to today"""
-    pass
+    update_operation(table_name='stock_monthly', tushare_function=stock_monthly)
 
 
 def update_adj_factor() -> None:
