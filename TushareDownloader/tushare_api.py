@@ -28,13 +28,9 @@ class TushareAPI:
 
     def download(self, api_name: str, **kwargs) -> DataFrame:
         """
-        Download data from tushare
+        Download data from tushare.pro
 
-        Args:
-            - api_name: tushare api name
-            - kwargs: parameters for the api
-
-        Returns:
-            - DataFrame: data from tushare
+        :param api_name: tushare api name
+        :param kwargs: arguments for tushare api
         """
         return self.pro.query(api_name, **kwargs)

@@ -3,6 +3,9 @@
 Author: Yanzhong Huang
 Email: bagelquant@gmail.com
 """
+
+import json
+import os
 from unittest import TestCase
 
 from TushareDownloader.tushare_api import TushareAPI
@@ -12,7 +15,8 @@ class TestTushareAPI(TestCase):
 
     def setUp(self):
         """set up token"""
-        self.token = 'f7ad1328a17b49b5b7d126cb3ef4ae00565cba3adc28eeeecabbeb78'
+        with open(os.path.join(os.path.dirname(__file__), 'test_config.json')) as f:
+            self.token = json.load(f)['tushare_token']
         self.tushare_api = TushareAPI(self.token)
 
     def test_download(self):
